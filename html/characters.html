@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/characters.css">
+
+  <title>Anime Characters | AnimeVerse</title>
+
+  <style>
+    /* =====================================
+       MAIN DASHBOARD
+    ===================================== */
+
+    .main-dashboard-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .trailer-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 500px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* =====================================
+       VIDEO AND THUMBNAIL
+    ===================================== */
+
+    .trailer-block {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      overflow: hidden !important;
+      z-index: 0;
+    }
+
+    .main-video-thumbnail,
+    .main-image-thumbnail {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+
+    .main-video-thumbnail.display-none,
+    .main-image-thumbnail.display-none {
+      display: none !important;
+    }
+
+    /* =====================================
+       ANIME GRADIENT AND INFORMATION
+    ===================================== */
+
+    .inner-background {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      box-sizing: border-box;
+      z-index: 2;
+
+      pointer-events: none;
+    }
+
+    .inner-background button,
+    .inner-background a {
+      pointer-events: auto;
+    }
+
+    /* =====================================
+       VIDEO PROGRESS BAR
+    ===================================== */
+
+    .video-progress-container {
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+
+      width: 100% !important;
+      height: auto !important;
+
+      display: flex !important;
+      align-items: center;
+      gap: 12px;
+
+      padding: 20px 25px 15px !important;
+      box-sizing: border-box !important;
+
+      z-index: 100 !important;
+      pointer-events: auto;
+
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65),
+        transparent
+      );
+    }
+
+    .video-progress-container.display-none {
+      display: none !important;
+    }
+
+    /* =====================================
+       RED VIDEO PROGRESS LINE
+    ===================================== */
+
+    .video-progress-bar {
+      flex: 1;
+      min-width: 0;
+      width: auto !important;
+      height: 4px !important;
+      margin: 0 !important;
+
+      appearance: none;
+      -webkit-appearance: none;
+
+      background: linear-gradient(
+        to right,
+        #ff1744 0%,
+        #ff1744 var(--progress, 0%),
+        rgba(255, 255, 255, 0.55) var(--progress, 0%),
+        rgba(255, 255, 255, 0.55) 100%
+      ) !important;
+
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .video-progress-bar::-webkit-slider-thumb {
+      appearance: none;
+      -webkit-appearance: none;
+
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+
+      background: #ff1744;
+      border: none;
+      cursor: pointer;
+    }
+
+    .video-progress-bar::-moz-range-thumb {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+
+      background: #ff1744;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* =====================================
+       VIDEO TIME
+    ===================================== */
+
+    .video-current-time,
+    .video-duration {
+      display: inline-block;
+      width: auto !important;
+      min-width: 35px;
+
+      flex-shrink: 0;
+      white-space: nowrap;
+
+      color: #ffffff !important;
+      font-family: "Poppins", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    /* =====================================
+       PLAY / PAUSE BUTTON
+    ===================================== */
+
+    .js-play-trailer-button {
+      cursor: pointer;
+      transition: filter 0.3s ease;
+    }
+
+    .js-play-trailer-button:hover {
+      filter: brightness(1.15);
+    }
+
+    /* =====================================
+       MOBILE RESPONSIVENESS
+    ===================================== */
+
+    @media (max-width: 600px) {
+
+      .trailer-container {
+        height: 70vh;
+        min-height: 400px;
+      }
+
+      .video-progress-container {
+        padding: 15px 12px 10px !important;
+        gap: 8px;
+      }
+
+      .video-current-time,
+      .video-duration {
+        font-size: 10px;
+        min-width: 28px;
+      }
+
+      .video-progress-bar::-webkit-slider-thumb {
+        width: 11px;
+        height: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MAIN ANIME DASHBOARD -->
+  <div class="main-dashboard-container">
+
+    <!--
+      Video, thumbnail, anime logo,
+      Play/Pause button, and progress bar
+      are generated by characters.js.
+    -->
+    <div class="trailer-container"></div>
+
+  </div>
+
+  <!-- CHARACTERS SECTION -->
+  <div id="characters" class="outer-container">
+
+    <div class="inner-container">
+
+      <!-- LEFT PANEL -->
+      <div class="left-side">
+
+        <input
+          type="search"
+          id="search-character"
+          placeholder="Search for characters..."
+          aria-label="Search for characters">
+
+        <img
+          id="js-anime-thumbnail"
+          src=""
+          alt="Anime Thumbnail">
+
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="right-side">
+
+        <div class="character-grid js-character-grid">
+          <!-- Character cards generated by JavaScript -->
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script
+    type="module"
+    src="/Javascript/document/characters.js">
+  </script>
+
+</body>
+</html>
