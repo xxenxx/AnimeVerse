@@ -43,7 +43,9 @@ if (!matchingAnimeId) {
         class="main-video-thumbnail display-none js-video-trailer"
         src="${matchingAnimeId.mainVideo}"
         preload="metadata"
-        playsinline>
+        playsinline
+        webkit-playsinline
+         muted>
       </video>
 
       <!-- ORIGINAL THUMBNAIL -->
@@ -223,27 +225,27 @@ if (!matchingAnimeId) {
   }
 
   // PLAY / PAUSE BUTTON
-  playButton.addEventListener("click", async () => {
+  
+// PLAY / PAUSE BUTTON
+playButton.addEventListener("click", async () => {
+  if (videoTrailer.paused) {
+    showVideo();
 
-    if (videoTrailer.paused) {
+    try {
+      await videoTrailer.play();
+    } catch (error) {
+      console.error("Mobile video playback failed:", error);
 
-      showVideo();
+      showThumbnail();
+      playButton.textContent = "▶ Play Trailer";
 
-      try {
-        await videoTrailer.play();
-      } catch (error) {
-        console.error("Video playback failed:", error);
-
-        if (videoTrailer.paused) {
-          showThumbnail();
-          playButton.textContent = "▶ Play Trailer";
-        }
-      }
-
-    } else {
-      videoTrailer.pause();
+      alert("Unable to play this video. Please check the video format or URL.");
     }
-  });
+  } else {
+    videoTrailer.pause();
+  }
+});
+
 
   // UPDATE BUTTON WHEN VIDEO PLAYS
   videoTrailer.addEventListener("play", () => {
