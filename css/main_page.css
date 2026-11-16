@@ -396,6 +396,500 @@ anime-info-grid {
 }
 
 
+/* ======================================
+   ANIMEVERSE RESPONSIVE DESIGN
+   ====================================== */
+
+/* GLOBAL FIXES */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+.hide {
+  display: none !important;
+}
+
+/* ======================================
+   TABLET: 769px - 1024px
+   ====================================== */
+
+@media screen and (max-width: 1024px) {
+
+  .text-info {
+    width: 85%;
+  }
+
+  .main-paragraph {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card-wrapper {
+    width: 90%;
+    height: 380px;
+    margin: 70px auto 0;
+    gap: 8px;
+  }
+
+  .card-wrapper img {
+    min-width: 0;
+    flex: 1;
+    width: 0;
+  }
+
+  .card-wrapper img:hover {
+    width: 0;
+    flex: 2;
+  }
+
+  .anime-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-left: 15px;
+    margin-right: 15px;
+    gap: 20px;
+  }
+
+  .explore-section-container {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+
+  .search-container input,
+  .search-container input:focus {
+    width: min(100%, 450px);
+  }
+
+  .footer_nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+  }
+
+  .footer_nav ul li a {
+    margin: 0;
+  }
+}
+
+/* ======================================
+   MOBILE: 481px - 768px
+   ====================================== */
+
+@media screen and (max-width: 768px) {
+
+  /* HERO SECTION */
+
+  .container,
+  .outer {
+    width: 100%;
+    height: 100svh;
+    min-height: 540px;
+  }
+
+  .container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .text-info {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .main-h3,
+  .main-h1,
+  .main-paragraph {
+    height: auto;
+  }
+
+  .main-h3 {
+    font-size: 15px;
+    margin: 0 0 12px;
+  }
+
+  .main-h1 {
+    font-size: clamp(28px, 7vw, 40px);
+    line-height: 1.2;
+    margin: 0 0 18px;
+  }
+
+  .main-paragraph {
+    width: 100%;
+    max-width: 420px;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 auto;
+  }
+
+  /* HERO BUTTONS */
+
+  .main-buttons {
+    position: absolute;
+    top: 74%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .top-anime-button,
+  .explore-button {
+    font-size: 14px;
+    padding: 10px 16px;
+    margin: 0;
+    white-space: nowrap;
+    border-radius: 20px;
+  }
+
+  /* TOP FIVE ANIME */
+
+  .top-anime-container {
+    height: auto;
+    min-height: 0;
+    padding: 55px 15px 60px;
+  }
+
+  .h1-top-five,
+  .h3-top-five {
+    height: auto;
+    line-height: 1.3;
+  }
+
+  .h1-top-five {
+    font-size: 32px;
+    margin: 0;
+  }
+
+  .h3-top-five {
+    font-size: 20px;
+    margin: 12px 0 0;
+  }
+
+  .card-wrapper {
+    width: 100%;
+    max-width: 600px;
+    height: 280px;
+    margin: 35px auto 0;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .card-wrapper img {
+    width: 0;
+    min-width: 0;
+    flex: 1;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .card-wrapper img:hover {
+    width: 0;
+    flex: 2;
+  }
+
+  /* EXPLORE SECTION */
+
+  .explore-section-css {
+    padding: 50px 0;
+    height: auto;
+  }
+
+  .explore-section-container {
+    margin: 0 15px;
+  }
+
+  .heading {
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 25px;
+  }
+
+  .logo-container {
+    margin: 15px 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .logo {
+    width: 110px;
+    max-width: 100%;
+  }
+
+  .list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 0;
+  }
+
+  /* SEARCH */
+
+  .search-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto 20px;
+    position: relative;
+  }
+
+  .search-container input,
+  .search-container input:focus {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 40px 12px 16px;
+    font-size: 14px;
+  }
+
+  .search-container i {
+    right: 15px;
+  }
+
+  /* ANIME CARDS */
+
+  .anime-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .anime-card {
+    min-width: 0;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .anime-card:hover {
+    transform: none;
+  }
+
+  .anime-thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .animer-info-title {
+    font-size: 14px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .anime-info-description {
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  /* FOOTER */
+
+  .footer {
+    width: 100%;
+    padding: 35px 15px 20px;
+  }
+
+  .social_icons {
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .social_icons a {
+    width: 42px;
+    height: 42px;
+  }
+
+  .footer_nav {
+    margin: 25px 0;
+  }
+
+  .footer_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 20px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer_nav ul li a {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .footer_bottom {
+    padding: 15px 10px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+
+/* ======================================
+   SMALL MOBILE: UP TO 480px
+   ====================================== */
+
+@media screen and (max-width: 480px) {
+
+  .text-info {
+    top: 42%;
+    width: 92%;
+  }
+
+  .main-h3 {
+    font-size: 13px;
+  }
+
+  .main-h1 {
+    font-size: 30px;
+  }
+
+  .main-paragraph {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .main-buttons {
+    top: 73%;
+    gap: 10px;
+  }
+
+  .top-anime-button,
+  .explore-button {
+    font-size: 12px;
+    padding: 9px 12px;
+    letter-spacing: 0;
+  }
+
+  .h1-top-five {
+    font-size: 27px;
+  }
+
+  .h3-top-five {
+    font-size: 17px;
+  }
+
+  .card-wrapper {
+    height: 220px;
+    gap: 4px;
+  }
+
+  .card-wrapper img {
+    border-width: 1px;
+    border-radius: 6px;
+  }
+
+  .heading {
+    font-size: 27px;
+  }
+
+  .anime-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .anime-card {
+    padding: 8px;
+  }
+
+  .anime-thumbnail {
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .animer-info-title {
+    font-size: 12px;
+  }
+
+  .anime-info-description {
+    font-size: 11px;
+  }
+
+  .footer_nav ul li a {
+    font-size: 12px;
+  }
+}
+
+/* ======================================
+   EXTRA SMALL PHONES
+   ====================================== */
+
+@media screen and (max-width: 360px) {
+
+  .main-h1 {
+    font-size: 26px;
+  }
+
+  .main-buttons {
+    flex-direction: column;
+    top: 70%;
+  }
+
+  .top-anime-button,
+  .explore-button {
+    width: 170px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .card-wrapper {
+    height: 180px;
+  }
+
+  .anime-grid {
+    gap: 8px;
+  }
+
+  .anime-thumbnail {
+    height: 100px;
+  }
+}
+
+
+
 
 
 
