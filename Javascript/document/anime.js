@@ -14,13 +14,17 @@ topFive.forEach((anime) => {
 document.querySelector('.card-wrapper')
   .innerHTML = topFiveAnimeHTML;
 
+
 document.querySelectorAll('.js-top-five-anime')
   .forEach((anime) => {
     anime.addEventListener('click', () => {
       const animeId = anime.dataset.animeId;
-      window.location.href = `characters.html?animeId=${animeId}`;
+
+      window.location.href =
+        `/html/characters.html?animeId=${encodeURIComponent(animeId)}`;
     });
   });
+
 
 // initialize an empty variable animeCardHTML string 
 let animeCardHTML = '';
@@ -55,6 +59,6 @@ animeGrid.querySelectorAll('.anime-card').forEach((card) => {
   card.addEventListener('click', () => {
     const animeId = card.dataset.animeId;
     // Navigate to the characters page with the anime ID in the URL
-    window.location.href = `characters.html?animeId=${animeId}`;
+    window.location.href = `/html/characters.html?animeId=${encodeURIComponent(animeId)}`;
   });
 });
