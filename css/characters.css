@@ -335,62 +335,22 @@ body {
   z-index: 10 !important;
 }
 
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 600px) {
 
-  .thumbnail-text-button-container {
-    padding: 0 15px 65px !important;
-  }
+/* ===== ANIMEVERSE RESPONSIVE DESIGN ===== */
 
-  .thumbnail-video {
-    width: 75%;
-    max-width: 350px;
-    margin-bottom: 12px !important;
-  }
-
-  .button-container {
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-}
-
-
-/* ==========================================
-   ANIMEVERSE CHARACTER PAGE RESPONSIVENESS
-   ========================================== */
-
-/* Prevent horizontal overflow */
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-.main-dashboard-container,
-.trailer-container {
-  position: relative;
-  width: 100%;
-}
-
-.main-video-thumbnail,
-.main-image-thumbnail {
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Ensure hidden elements stay hidden */
 .display-none,
 .hide {
   display: none !important;
 }
 
-/* ==========================================
-   TABLET VIEW
-   ========================================== */
-
+/* TABLET */
 @media screen and (max-width: 1024px) {
-
   .inner-container {
     padding: 0 30px;
     gap: 25px;
@@ -409,283 +369,13 @@ body {
     gap: 15px;
     padding: 20px;
   }
-
-  .character-thumbnail {
-    height: 190px;
-  }
-
-  .thumbnail-video {
-    width: 50%;
-    max-width: 420px;
-  }
 }
 
-/* ==========================================
-   MOBILE VIEW
-   ========================================== */
-
+/* MOBILE */
 @media screen and (max-width: 768px) {
 
-  /* TRAILER SECTION */
-
+  /* TRAILER */
   .main-dashboard-container,
-  .trailer-container {
-    width: 100%;
-    height: 65svh;
-    min-height: 350px;
-    max-height: 650px;
-    overflow: hidden;
-  }
-
-  .main-video-thumbnail,
-  .main-image-thumbnail {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  /* LOGO AND BUTTONS */
-
-  .inner-background {
-    position: absolute !important;
-    inset: 0 !important;
-    height: 100% !important;
-    display: flex !important;
-    align-items: flex-end !important;
-  }
-
-  .thumbnail-text-button-container {
-    width: 100%;
-    padding: 0 18px 70px !important;
-    margin: 0 !important;
-    align-items: flex-start !important;
-  }
-
-  .thumbnail-video {
-    width: 65%;
-    max-width: 290px;
-    height: auto;
-    margin-bottom: 12px !important;
-  }
-
-  .button-container {
-    display: flex !important;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .button-container button {
-    font-size: 13px;
-    padding: 9px 13px;
-    border-radius: 9px;
-    white-space: nowrap;
-  }
-
-  .anime-characters-button {
-    font-size: 13px;
-    padding: 9px 13px;
-    border-radius: 9px;
-  }
-
-  /* CHARACTER SECTION */
-
-  .outer-container {
-    width: 100%;
-    height: auto;
-    padding: 35px 0 50px;
-    overflow: visible;
-  }
-
-  .inner-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    padding: 0 18px;
-    gap: 25px;
-  }
-
-  /* SEARCH PANEL */
-
-  .left-side {
-    position: relative;
-    top: auto;
-    width: 100%;
-    flex-shrink: 1;
-    gap: 15px;
-    align-items: center;
-  }
-
-  .left-side input[type="search"] {
-    width: 100%;
-    max-width: 500px;
-    font-size: 14px;
-    padding: 12px 15px;
-  }
-
-  .left-side img,
-  .left-side video {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    object-fit: cover;
-  }
-
-  /* CHARACTER GRID */
-
-  .right-side {
-    width: 100%;
-    min-width: 0;
-    max-height: none;
-    height: auto;
-    overflow-y: visible;
-    padding-right: 0;
-    gap: 15px;
-  }
-
-  .character-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
-    padding: 0;
-    width: 100%;
-  }
-
-  .character-card {
-    width: 100%;
-    min-width: 0;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .character-thumbnail {
-    width: 100%;
-    height: 190px;
-  }
-
-  .character-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .character-name {
-    font-size: 13px;
-    padding: 10px 6px;
-    line-height: 1.4;
-    overflow-wrap: anywhere;
-  }
-
-  /* Disable hover movement on touch devices */
-
-  .character-card:hover {
-    transform: none;
-    animation: none;
-  }
-}
-
-/* ==========================================
-   SMALL MOBILE VIEW
-   ========================================== */
-
-@media screen and (max-width: 480px) {
-
-  .main-dashboard-container,
-  .trailer-container {
-    height: 55svh;
-    min-height: 320px;
-    max-height: 520px;
-  }
-
-  .thumbnail-text-button-container {
-    padding: 0 12px 60px !important;
-  }
-
-  .thumbnail-video {
-    width: 70%;
-    max-width: 240px;
-    margin-bottom: 10px !important;
-  }
-
-  .button-container {
-    gap: 8px;
-  }
-
-  .button-container button,
-  .anime-characters-button {
-    font-size: 12px;
-    padding: 8px 11px;
-  }
-
-  .inner-container {
-    padding: 0 12px;
-    gap: 20px;
-  }
-
-  .left-side input[type="search"] {
-    font-size: 13px;
-  }
-
-  .left-side img,
-  .left-side video {
-    max-width: 280px;
-  }
-
-  .character-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .character-thumbnail {
-    height: 155px;
-  }
-
-  .character-name {
-    font-size: 12px;
-    padding: 9px 5px;
-  }
-}
-
-/* ==========================================
-   EXTRA SMALL MOBILE VIEW
-   ========================================== */
-
-@media screen and (max-width: 360px) {
-
-  .thumbnail-video {
-    width: 65%;
-    max-width: 200px;
-  }
-
-  .button-container button,
-  .anime-characters-button {
-    font-size: 11px;
-    padding: 7px 9px;
-  }
-
-  .character-grid {
-    gap: 8px;
-  }
-
-  .character-thumbnail {
-    height: 130px;
-  }
-
-  .character-name {
-    font-size: 11px;
-  }
-}
-
-
-
-/* ===== MOBILE TRAILER LAYOUT FIX ===== */
-
-@media screen and (max-width: 768px) {
-
   .trailer-container {
     position: relative;
     width: 100%;
@@ -709,11 +399,23 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
   }
 
+  .main-image-thumbnail {
+    z-index: 1;
+  }
+
+  .main-video-thumbnail {
+    z-index: 2;
+  }
+
+  /* LOGO AND BUTTONS */
   .inner-background {
     position: absolute !important;
-    inset: 0;
+    inset: 0 !important;
+    width: 100%;
+    height: 100% !important;
     z-index: 5;
     display: flex !important;
     align-items: flex-end !important;
@@ -721,42 +423,45 @@ body {
   }
 
   .thumbnail-text-button-container {
-    position: relative;
-    width: 100%;
-    padding: 0 20px 65px !important;
+    position: relative !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 18px;
+    justify-content: flex-end !important;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 20px 65px !important;
+    gap: 15px;
     pointer-events: auto;
   }
 
   .thumbnail-video {
     display: block;
-    width: 65% !important;
+    width: 65%;
     max-width: 260px;
-    height: auto !important;
+    height: auto;
+    margin: 0 !important;
     object-fit: contain;
   }
 
   .button-container {
-    position: relative;
     display: flex !important;
     flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: center;
-    gap: 12px;
     width: 100%;
+    gap: 10px;
+    margin: 0 !important;
   }
 
   .play-trailer-button,
   .anime-characters-button {
-    position: relative;
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
     min-height: 44px;
-    padding: 12px 18px;
-    font-size: 14px;
+    padding: 10px 15px;
+    font-size: 13px;
     visibility: visible !important;
     opacity: 1 !important;
     pointer-events: auto;
@@ -764,9 +469,124 @@ body {
 
   .video-progress-container {
     position: absolute;
-    bottom: 0;
+    bottom: 0 !important;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 10 !important;
+  }
+
+  /* CHARACTER SECTION */
+  .outer-container {
+    width: 100%;
+    height: auto;
+    padding: 35px 0 50px;
+    overflow: visible;
+  }
+
+  .inner-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 0 18px;
+    gap: 25px;
+  }
+
+  .left-side {
+    position: relative;
+    top: auto;
+    width: 100%;
+    flex-shrink: 1;
+    gap: 15px;
+  }
+
+  .left-side input[type="search"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .left-side img,
+  .left-side video {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .right-side {
+    width: 100%;
+    min-width: 0;
+    max-height: none;
+    height: auto;
+    overflow-y: visible;
+    padding-right: 0;
+  }
+
+  .character-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .character-thumbnail {
+    height: 190px;
+  }
+
+  .character-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .character-name {
+    font-size: 13px;
+    padding: 10px 6px;
+    overflow-wrap: anywhere;
+  }
+
+  .character-card:hover {
+    transform: none;
+    animation: none;
+  }
+}
+
+/* SMALL MOBILE */
+@media screen and (max-width: 480px) {
+  .thumbnail-text-button-container {
+    padding: 0 15px 55px !important;
+  }
+
+  .thumbnail-video {
+    width: 70%;
+    max-width: 230px;
+  }
+
+  .button-container {
+    gap: 8px;
+  }
+
+  .play-trailer-button,
+  .anime-characters-button {
+    font-size: 12px;
+    padding: 9px 12px;
+  }
+
+  .inner-container {
+    padding: 0 12px;
+  }
+
+  .character-grid {
+    gap: 10px;
+  }
+
+  .character-thumbnail {
+    height: 155px;
+  }
+
+  .character-name {
+    font-size: 12px;
   }
 }
